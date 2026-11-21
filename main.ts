@@ -21,7 +21,9 @@ radio.setGroup(1)
 radio.setFrequencyBand(0)
 radio.setTransmitPower(1)
 radio.setTransmitSerialNumber(false)
-command_turn_right = 1
+let is__controller_to = 0
+let command_turn_left = 2000
+command_turn_right = 3000
 basic.forever(function () {
     basic.pause(100)
     if (is_controller) {
@@ -51,7 +53,6 @@ basic.forever(function () {
         command = command_stop
         roll = input.rotation(Rotation.Roll)
         if (roll < 45) {
-            let command_turn_left = 0
             basic.showArrow(ArrowNames.East)
             command_stop = command_turn_left
         } else {
